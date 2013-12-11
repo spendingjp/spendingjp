@@ -1,8 +1,18 @@
----
-title: Welcome to Middleman
----
+header role="banner" class="header"
+  h1
+    =image_tag 'title.png', :alt => '税金はどこへ行った？ - WHERE DOES MY MONEY GO? -'
+  
+  div class="header__produced_by"
+    | 税金はどこへ行った？は
+    = link_to 'Open Knowledge Foundation', 'http://okfn.jp', :target => '_blank'
+    | のプロジェクトのひとつです
+  
+  nav class="nav-buttons"
+    = link_to image_tag('hero_btn_know.png', :alt => 'あなたの税金の使い道を知る'), '#know'
+    = link_to image_tag('hero_btn_join.png', :alt => 'プロジェクトに参加する'),    '#join'
+  
+div class="main" role="main"
 
-.welcome
-  h1 Middleman is Watching
-  p.doc
-    == link_to "Read Online Documentation", "http://middlemanapp.com/"
+footer role="contentinfo"
+
+nav role="navigation"

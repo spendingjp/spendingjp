@@ -33,17 +33,35 @@
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
 activate :livereload
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+# Full image URL
+set :protocol, "http://"
+set :host, "spending.jp"
+set :port, 80
+
+helpers do
+
+  def host_with_port
+    [host, optional_port].compact.join(':')
+  end
+
+  def optional_port
+    port unless port.to_i == 80
+  end
+  
+  def canonical_url(path = '')
+    protocol + host_with_port + path
+  end
+  
+  def image_url(source)
+    protocol + host_with_port + image_path(source)
+  end
+
+end
 
 ###
 # Gem

@@ -1,0 +1,38 @@
+// Base Style
+// --------------------------------------------------
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background: $body-bg image-url('bg.png') 0 0 repeat;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    // Default
+    outline: thin dotted #333;
+    // Webkit
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+}
+
+p {
+  margin: 0 0 $margin-base-vertical 0;
+}
