@@ -16,9 +16,14 @@
 .l-col {
   float: left;
   width: ($container-size / 2)- 30px;
-  
+
   &:first-child {
     margin-right: 30px;
     margin-left: 30px;
   }
+}
+#map {
+  margin: auto;
+  width: 700px;
+  height: 700px;
 }
