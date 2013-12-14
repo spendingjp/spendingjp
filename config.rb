@@ -43,6 +43,10 @@ set :protocol, "http://"
 set :host, "spending.jp"
 set :port, 80
 
+activate :deploy do |deploy|
+  deploy.method = :git
+end
+
 helpers do
 
   def host_with_port
