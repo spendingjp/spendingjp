@@ -7,7 +7,7 @@
 // Colors
 // -------------------------
 
-$turquoise-bule: #2890a1;
+$turquoise-blue: #3d9aa9;
 $dark-blue:      #012344;
 $black:          #222;
 $gray:           #333;
@@ -38,8 +38,7 @@ $font-size-large:  19px !default;
 $font-size-medium: 16px !default;
 $font-size-small:  13px !default;
 
-$line-height-base:        1.428571429; // 20/14
-$line-height-computed:    floor($font-size-base * $line-height-base); // ~20px
+$line-height-base:        1.8;
 
 $headings-font-family:    $font-family-base;
 $headings-font-weight:    500;
@@ -61,3 +60,8 @@ $margin-small-vertical:         15px;
 $margin-small-horizontal:       15px;
 
 $border-color: #666 !default;
+
+// Tables
+// -------------------------
+
+$table-border-color: $border-color !default;

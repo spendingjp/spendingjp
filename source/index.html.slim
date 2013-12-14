@@ -1,18 +1,194 @@
+ruby:
+  updates = [
+    { date: '2013/12/05', title: '神奈川県鎌倉市が立ち上がりました', url: 'http://kamakura.spending.jp/' },
+    { date: '2013/12/02', title: '神奈川県茅ヶ崎市が立ち上がりました', url: 'http://chigasaki.spending.jp/' },
+    { date: '2013/11/20', title: '東京都府中市が立ち上がりました', url: 'http://fuchu-tokyo.spending.jp/' },
+  ];
+  
+  in_press = [
+    { date: '2013/12/05', title: '神奈川県鎌倉市が立ち上がりました', url: 'http://kamakura.spending.jp/' },
+    { date: '2013/12/02', title: '神奈川県茅ヶ崎市が立ち上がりました', url: 'http://chigasaki.spending.jp/' },
+    { date: '2013/11/20', title: '東京都府中市が立ち上がりました', url: 'http://fuchu-tokyo.spending.jp/' },
+  ];
+
+/NHK NEWS WEBに、Spending Data Party をご紹介いただきました。<a href="http://www3.nhk.or.jp/news/html/20130720/t10013177541000.html" target=="_blank">税金はどこへ行った？”を広げよう　NHKニュース</a>
+/NHK NEWS WEB(TV総合)で、Spending.jp をご紹介いただきました。<a href="http://www3.nhk.or.jp/news/newsweb/" target=="_blank">NHK NEWS WEB - 財政破綻</a>
+/<a href="http://takoratta.hatenablog.com/entry/2013/07/06/234618" target="_blank">ITから考える地方自治 〜 「税金はどこへ行った？」をオラの街にも作ろう - Nothing ventured, nothing gained.</a>にSpending.jpについての記事を掲載いただきました
+
+
 header role="banner" class="header"
-  h1
-    =image_tag 'title.png', :alt => '税金はどこへ行った？ - WHERE DOES MY MONEY GO? -'
+  div class="container"
+    h1 class="header__title"
+      =image_tag 'title.png', :alt => '税金はどこへ行った？ - WHERE DOES MY MONEY GO? -'
+    
+    div class="header__produced_by"
+      | 「税金はどこへ行った？」は 
+      = link_to 'Open Knowledge Foundation Japan', 'http://okfn.jp', :target => '_blank'
+      |  のプロジェクトのひとつです
+    
+    nav class="nav-buttons"
+      = link_to image_tag('hero_btn_know.png', :alt => 'あなたの税金の使い道を知る', :class => 'nav-button'), '#know'
+      = link_to image_tag('hero_btn_join.png', :alt => 'プロジェクトに参加する', :class => 'nav-button'),    '#join'
   
-  div class="header__produced_by"
-    | 税金はどこへ行った？は
-    = link_to 'Open Knowledge Foundation', 'http://okfn.jp', :target => '_blank'
-    | のプロジェクトのひとつです
-  
-  nav class="nav-buttons"
-    = link_to image_tag('hero_btn_know.png', :alt => 'あなたの税金の使い道を知る'), '#know'
-    = link_to image_tag('hero_btn_join.png', :alt => 'プロジェクトに参加する'),    '#join'
-  
+    table class="whats-new"
+      thead
+        tr
+          th class="subheading"
+            | 更新情報
+          th class="subheading"
+            | メディア掲載情報
+      tbody
+        - for i in 0...3
+          tr
+            td
+              span class="whats-new__date"
+                = updates[i][:date]
+              = link_to updates[i][:title], updates[i][:url]
+            td
+              span class="whats-new__date"
+                = in_press[i][:date]
+              = link_to in_press[i][:title], in_press[i][:url]
+    
+    div class="okfn-ribbon"
+      = link_to 'An Open Knowledge Foundation Japan Site', 'http://okfn.jp', :target => '_blank'
+
 div class="main" role="main"
+  // About
+  section class="section--turquoise" id="about"
+    div class="container"
+      h2 class="heading"
+        = image_tag 'about_tit.png', :alt => 'このプロジェクトについて'
+      div class="section__lead"
+        | あなたが払った税金が1日あたりどう使われているかを知ることで、
+        br
+        | 公共サービスの受益と負担の関係を読み解く市民主導のプロジェクトです
+      div class="section__body"
+        p
+          | 私たちは本来であれば支払った税金で
+          br
+          | 望む公共サービスを受ける権利があります。
+        p
+          | そのためには税金の使われ方を知る事が必要ですが、
+          br
+          | 簡単に知る術がありません。
+        p
+          |「税金はどこへ行った？」は、
+          br
+          | 税金が支える公共サービスの受益と負担の関係をわかりやすく理解して頂く為に
+          br
+          | イギリスの 
+          = link_to 'Where Does My Money Go?', 'http://wheredoesmymoneygo.org', :target => '_blank'
+          |  を参考に、有志によって立ち上げられ、
+          br
+          | 現在は、多くの有志の人の手によりサイトが立ち上がっています。
+        p
+          | 税金への理解と問題意識が
+          br
+          | 日本の財政を健全化させ新たな成長へと導く近道に違いないと信じ、活動しています。
+        p
+          | 現在は、自治体内での税金の使われ方がわかるのみですが、
+          br
+          | いずれは自治体間での税金の比較、グローバルな税金の比較を目指しています。
+    
+      nav class="nav-links"
+        = link_to 'あなたの税金の使い道を知る', '#know'
+        = link_to 'プロジェクトに参加するには',    '#join'
+  
+  // Know
+  section class="section" id="know"
+    div class="container"
+      h2 class="heading"
+        = image_tag 'know_tit.png', :alt => 'あなたの税金の使い道を知る'
+      div
+        select id="js-pref"
+          option 都道府県を選択する
+        select id="js-city"
+          option 自治体を選択する
+        = link_to 'サイトを見る', "#", :id => 'js-visitSatellite'
+        span
+          |（全55都市）
+      
+      div class="know__map"
+        | map here
+  
+  // Join
+  section class="section--turquoise" id="join"
+    div class="container"
+      h2 class="heading"
+        = image_tag 'join_tit.png', :alt => 'プロジェクトに参加する'
+      div class="section__lead"
+        | 「税金はどこへ行った？」は市民の手によってボランタリーで運営されている
+        br
+        | 自主的な組織のため、協力頂ける方を募集しています。
+        br
+        | プロジェクトに興味がある方の参加も大歓迎です
+    
+      div class="l-row"
+        div class="l-col"
+          h3 class="subheading--turquoise"
+            | 他の自治体のサイトを立ち上げてみたい方
+          div class="section__body--text-align-left"
+            p
+              | もし、Webサービスの開発経験がある方なら、是非あなたが住んでいる自治体、もしくは興味のある自治体の「税金はどこへ行った？」を立ち上げてみませんか？
+              br
+              | 次の「ライブラリー」でサイトの立ち上げに必要な情報を公開していますので、参考にしてください。また、
+              = link_to '開発者コミュニティのML', 'https://groups.google.com/forum/?fromgroups#!forum/spendingjp-dev', :target => '_blank'
+              |  で気軽に質問できます。是非ご参加ください。
+            
 
-footer role="contentinfo"
+        div class="l-col"
+          h3 class="subheading--turquoise"
+            | 議論に参加したい方、動向を知りたい方
+          div class="section__body--text-align-left"
+            p
+              | 技術的なスキルはないけど、プロジェクトに興味がある、議論に参加したいという方も大歓迎です。
+              br
+              = link_to 'Facebook のグループ', 'https://www.facebook.com/groups/spendingjp/', :target => '_blank'
+              | で日々活発な議論が行われています。オープンにディスカッションできる場ですので、是非ご参加ください。
+        
+  // Library
+  section class="section" id="library"
+    div class="container"
+      h2 class="heading"
+        = image_tag 'library_tit.png', :alt => 'ライブラリー'
+      div class="section__lead"
+        | サイトの立ち上げに必要な情報を公開しています
+      ul
+        li
+          | プロジェクトのソースコードは、 
+          = link_to 'Open Definition', 'http://opendefinition.org/', :target => '_blank'
+          |  の定義に沿っていれば、どなたでも利用、改変、及び再配布が可能です。
+        li
+          | サイトの立ち上げにあたって独自のサーバを用意する必要はありません。（GitHub Pages を利用します。）
 
+  section class="section--turquoise" id="contact"
+    div class="container"
+      h2 class="heading"
+        = image_tag 'contact_tit.png', :alt => 'お問い合わせ'
+      div class="lead"
+        | ご質問、お問い合わせは以下にお願いいたします
+      
+      section
+        h3
+          | サイト制作サポート
+      
+      section
+        h3
+          | メディア等への掲載について
+        p
+          | サイトのスクリーンショットなどは自由にご利用ください。ただし、
+      
+      section
+        h3
+          | その他プロジェクトに関するお問い合わせ
+    
+footer role="contentinfo" class="footer"
+  div class="container"
+    p
+      | 「税金はどこへ行った？」は、イギリスの 
+      = link_to'Open Knowledge Foundation', 'http://okfn.org', :target => '_blank'
+      |  が開発した 
+      = link_to 'Where Does My Money Go? (英語版)', 'http://wheredoesmymoneygo.org/', :target => '_blank'
+      |  をベースに開発されています。本プロジェクトは、公共データのオープン化を進める有志に支えられています。
+    
 nav role="navigation"

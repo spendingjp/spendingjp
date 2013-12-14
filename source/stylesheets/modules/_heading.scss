@@ -1,0 +1,22 @@
+// Heading
+// --------------------------------------------------
+
+.heading {
+  margin-bottom: $margin-large-vertical;
+}
+
+.subheading {
+  margin-bottom: $margin-small-vertical;
+  padding: $margin-small-vertical 0;
+  &:before,
+  &:after {
+    content: '−';
+    padding: 0 3px;
+  }
+}
+
+.subheading--turquoise {
+  @extend .subheading;
+  border: 3px solid #fff;
+  font-weight: normal;
+}

@@ -1,0 +1,16 @@
+// Header
+// --------------------------------------------------
+
+.header {
+  margin-top: $margin-large-vertical;
+  text-align: center;
+}
+
+.header__title {
+  margin-bottom: $margin-small-vertical;
+}
+
+.header__produced_by {
+  color: $gray;
+  margin-bottom: $margin-large-vertical;
+}

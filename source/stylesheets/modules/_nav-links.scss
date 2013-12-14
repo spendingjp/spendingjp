@@ -1,0 +1,19 @@
+// Nav links
+// --------------------------------------------------
+
+.nav-links {
+  a {
+    text-decoration: none;
+    font-size: $font-size-medium;
+    background: image-url('icon_link.png') 0 0 no-repeat;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 44px;
+    margin: 0 30px;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

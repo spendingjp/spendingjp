@@ -1,0 +1,38 @@
+// Section
+// --------------------------------------------------
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.section--turquoise {
+  @extend .section;
+  background-color: $turquoise-blue;
+  color: #fff;
+  text-align: center;
+  
+  a {
+    color: #fff;
+    text-decoration: underline;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.section__lead {
+  font-size: $font-size-large;
+  margin-bottom: $margin-large-vertical;
+}
+
+.section__body {
+  margin-bottom: $margin-large-vertical;
+}
+
+.section__body--text-align-left {
+  text-align: left;
+  padding: 0 $margin-small-horizontal;
+}
