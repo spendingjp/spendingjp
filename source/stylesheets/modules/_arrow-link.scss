@@ -1,0 +1,12 @@
+// Arrow Link
+// --------------------------------------------------
+
+.arrow-link {
+  background: image-url('link_arrow_blue.png') 0 5px no-repeat;
+  padding-left: 18px;
+}
+
+.arrow-link--turquoise {
+  @extend .arrow-link;
+  background-image: image-url('link_arrow_white.png');
+}

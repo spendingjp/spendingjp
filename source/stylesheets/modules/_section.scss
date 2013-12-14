@@ -26,13 +26,19 @@
 .section__lead {
   font-size: $font-size-large;
   margin-bottom: $margin-large-vertical;
+  color: $dark-blue;
+  font-weight: bold;
+}
+
+.section__lead--turquoise {
+  @extend .section__lead;
+  color: #fff;
 }
 
 .section__body {
   margin-bottom: $margin-large-vertical;
 }
 
-.section__body--text-align-left {
-  text-align: left;
+.section__body--child {
   padding: 0 $margin-small-horizontal;
 }

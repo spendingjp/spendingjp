@@ -1,0 +1,26 @@
+// Step
+// --------------------------------------------------
+
+.step {
+  text-align: left;
+  border-bottom: 1px dotted $border-color;
+  padding: 15px 0;
+  @include clearfix;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.step__title {
+  float: left;
+  width: 250px;
+  margin-right: 30px;
+  color: $dark-blue;
+  font-weight: bold;
+}
+
+.step__description {
+  float: left;
+  width: $container-size - 30px - 250px;
+}

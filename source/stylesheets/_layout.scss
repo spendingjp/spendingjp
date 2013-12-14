@@ -11,6 +11,7 @@
 .l-row {
   @include clearfix;
   width: $container-size;
+  margin-bottom: $margin-base-vertical;
 }
 
 .l-col {

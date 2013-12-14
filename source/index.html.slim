@@ -58,7 +58,7 @@ div class="main" role="main"
     div class="container"
       h2 class="heading"
         = image_tag 'about_tit.png', :alt => 'このプロジェクトについて'
-      div class="section__lead"
+      div class="section__lead--turquoise"
         | あなたが払った税金が1日あたりどう使われているかを知ることで、
         br
         | 公共サービスの受益と負担の関係を読み解く市民主導のプロジェクトです
@@ -116,7 +116,7 @@ div class="main" role="main"
     div class="container"
       h2 class="heading"
         = image_tag 'join_tit.png', :alt => 'プロジェクトに参加する'
-      div class="section__lead"
+      div class="section__lead--turquoise"
         | 「税金はどこへ行った？」は市民の手によってボランタリーで運営されている
         br
         | 自主的な組織のため、協力頂ける方を募集しています。
@@ -127,24 +127,29 @@ div class="main" role="main"
         div class="l-col"
           h3 class="subheading--turquoise"
             | 他の自治体のサイトを立ち上げてみたい方
-          div class="section__body--text-align-left"
+          div class="section__body--child text-left"
             p
               | もし、Webサービスの開発経験がある方なら、是非あなたが住んでいる自治体、もしくは興味のある自治体の「税金はどこへ行った？」を立ち上げてみませんか？
-              br
-              | 次の「ライブラリー」でサイトの立ち上げに必要な情報を公開していますので、参考にしてください。また、
+            p
+              | サイトの立ち上げにあたって独自のサーバを用意する必要はありません。次の「ライブラリー」でサイトの立ち上げに必要な情報を公開していますので、参考にしてください。
+            p
               = link_to '開発者コミュニティのML', 'https://groups.google.com/forum/?fromgroups#!forum/spendingjp-dev', :target => '_blank'
-              |  で気軽に質問できます。是非ご参加ください。
+              |  でも気軽に質問できます。是非ご参加ください。
             
 
         div class="l-col"
           h3 class="subheading--turquoise"
             | 議論に参加したい方、動向を知りたい方
-          div class="section__body--text-align-left"
+          div class="section__body--child text-left"
             p
               | 技術的なスキルはないけど、プロジェクトに興味がある、議論に参加したいという方も大歓迎です。
-              br
+            p
+              | 例えば現在、自治体間の横比較とグローバルな横比較を目指すべく、先ず各自治体間の仕様の統一と世界標準的な
+              = link_to '「政府機能分類(Classification of the Functions of Government (COFOG)」', 'https://docs.google.com/spreadsheet/ccc?key=0AnJGwhMm-ribdHE4Q2ZEQm1DVEhsM2lkNk8tQzRMRXc&usp=sharing', :target => '_blank'
+              | の採用を念頭に、検討を続けています。
+            p
               = link_to 'Facebook のグループ', 'https://www.facebook.com/groups/spendingjp/', :target => '_blank'
-              | で日々活発な議論が行われています。オープンにディスカッションできる場ですので、是非ご参加ください。
+              | で日々活発な議論が行われています。オープンな場ですので、是非ご参加ください。
         
   // Library
   section class="section" id="library"
@@ -153,42 +158,151 @@ div class="main" role="main"
         = image_tag 'library_tit.png', :alt => 'ライブラリー'
       div class="section__lead"
         | サイトの立ち上げに必要な情報を公開しています
-      ul
-        li
-          | プロジェクトのソースコードは、 
-          = link_to 'Open Definition', 'http://opendefinition.org/', :target => '_blank'
-          |  の定義に沿っていれば、どなたでも利用、改変、及び再配布が可能です。
-        li
-          | サイトの立ち上げにあたって独自のサーバを用意する必要はありません。（GitHub Pages を利用します。）
+      p
+        | プロジェクトのソースコードは、 
+        = link_to 'Open Definition', 'http://opendefinition.org/', :target => '_blank'
+        |  の定義に沿っていれば、どなたでも利用、改変、及び再配布が可能です。
+        br
+        | サイトの立ち上げにあたって独自のサーバを用意する必要はありません。（GitHub Pages を利用します。）
+      
+      section
+        h3 class="subheading"
+          | サイト立ち上げのフロー
+        ol class="steps"
+          li class="step"
+            div class="step__title"
+              | 1. 手をあげる
+            div class="step__description"
+              | 他の方との重複を避けるために、
+              = link_to 'こちらのフォーム', 'https://docs.google.com/spreadsheet/ccc?key=0Ai2ukstW0YJYdHg1ajdLbVQyVy1OZUROSlVfNXFYaWc&usp=sharing', :target => '_blank'
+              | に制作したい自治体がないかご確認いただき、なければご記入ください。
+          li class="step"
+            div class="step__title"
+              | 2. データを集める
+            div class="step__description"
+              | 自治体のWebサイトなどから、予算データや決算データを見つけます。
+          li class="step"
+            div class="step__title"
+              | 3. データを OpenSpending に登録する
+            div class="step__description"
+              | 2で集めたデータを OpenSpending に登録します。
+              = link_to '最も簡単なOpenSpending用のデータの作り方 - Qiita [キータ]', 'http://qiita.com/jmblog/items/a804177b1898e6379fe8', :target => '_blank'
+              | と
+              = link_to 'OpenSpendingへの予算データの登録方法 - Qiita [キータ]', 'http://qiita.com/niryuu/items/4adb658c627d2e6d48e4', :target => '_blank'
+              | を参考にしてください。
+          li class="step"
+            div class="step__title"
+              | 4. サイト制作開始
+            div class="step__description"
+              = link_to 'Spending.jp クローンサイトの立ち上げ手順 (OpenSpending 対応版) - Qiita [キータ]', 'http://qiita.com/hal_sk/items/d1cfa971fbbc09777d20', :target => '_blank'
+              | を参考にしながら、サイトを制作してください。
+          li class="step"
+            div class="step__title"
+              | 5. 完成！
+            div class="step__description"
+              | おめでとうございます！公開されましたら、
+              = link_to '開発者コミュニティのML', 'https://groups.google.com/forum/?fromgroups#!forum/spendingjp-dev', :target => '_blank'
+              |  か
+              = link_to 'Facebook のグループ', 'https://www.facebook.com/groups/spendingjp/', :target => '_blank'
+              |  に是非ご連絡ください。本サイトにリンクを掲載させていただきます。
+      section
+        h3 class="subheading"
+          | 関連リソース
+        div class="references"
+          h4
+            | Windows をお使いの方へ
+          ul
+            li
+              = link_to 'Windows PC での「Spending.jp クローンサイトの立ち上げ手順 (OpenSpending 対応版)」実行マニュアル - Google ドライブ', 'https://docs.google.com/document/d/19HSh1b4SgT500AIOCRwpVhCmvP5LmC6ZrTEsYYL2VoU/edit', :target => '_blank', :class => 'arrow-link'
+            li
+              = link_to 'openspending - Windows 7/8 で Spending.jp クローンサイトを立ち上げるための Jekyll セットアップ手順 - Qiita [キータ]', 'http://qiita.com/moppem@github/items/48a40f4853f3be5932c4', :target => '_blank', :class => 'arrow-link'
+          h4
+            | Amazon EC2 をお使いの方へ
+          ul
+            li
+              =link_to 'openspending - Spending.jpクローンサイトの開発環境をAmazonLinux上に用意する - Qiita [キータ]', 'http://qiita.com/MSN-088/items/baf9dd80539b3e7917a2', :target => '_blank', :class => 'arrow-link'
+          h4
+            | サイトで使うアイコンを探したい方へ
+          ul
+            li
+            = link_to 'SVG Icon Gallery for "Where Does My Money Go?"', 'http://jmblog.github.io/openspending-icons/', :target => '_blank', :class => 'arrow-link'
+      
+      section
+        h3 class="subheading"
+          | サポート
+        p class="text-left"
+          = link_to '開発者コミュニティのML', 'https://groups.google.com/forum/?fromgroups#!forum/spendingjp-dev', :target => '_blank'
+          |  でも気軽に質問できます。是非ご参加ください。
 
   section class="section--turquoise" id="contact"
     div class="container"
       h2 class="heading"
         = image_tag 'contact_tit.png', :alt => 'お問い合わせ'
-      div class="lead"
+      div class="section__lead--turquoise"
         | ご質問、お問い合わせは以下にお願いいたします
       
-      section
-        h3
-          | サイト制作サポート
+      div class="l-row"
+        div class="l-col"
+          h3 class="subheading--turquoise"
+            | サイト立ち上げについてのご質問
+          div class="section__body--child text-left"
+            p
+              | 気軽に質問できる、開発者コミュニティの ML か Facebook のグループをご活用ください。
+            ul
+              li
+                = link_to '開発者コミュニティのML', 'https://groups.google.com/forum/?fromgroups#!forum/spendingjp-dev', :target => '_blank', :class => 'arrow-link--turquoise'
+              li
+                = link_to 'Facebook のグループ', 'https://www.facebook.com/groups/spendingjp/', :target => '_blank', :class => 'arrow-link--turquoise'
+            
+
       
-      section
-        h3
-          | メディア等への掲載について
-        p
-          | サイトのスクリーンショットなどは自由にご利用ください。ただし、
-      
-      section
-        h3
-          | その他プロジェクトに関するお問い合わせ
+        div class="l-col"
+          h3 class="subheading--turquoise"
+            | プロジェクト運営チームへのお問い合わせ
+          div class="section__body--child text-left"
+            p
+              | 本プロジェクトに関するお問い合わせは、以下のフォームよりお願い致します。
+            ul
+              li
+                = link_to 'お問い合わせフォーム', 'https://docs.google.com/spreadsheet/viewform?usp=drive_web&formkey=dGw3ZTNvYjRkRnFWb3JDUDJuNExpWFE6MQ#gid=0', :target => '_blank'
     
+      div class="l-row"
+        div class="l-col"
+          h3 class="subheading--turquoise"
+            | メディア等への掲載について
+          div class="section__body--child text-left"
+            p
+              | サイトのスクリーンショットなどは自由にご利用ください。ただし、
+              strong
+                |「イギリスの Open Knowledge Foundation が開発したオープンソースプログラムをもとに開発されている。」
+              | という旨を必ず記載していただきますようお願い致します。
+
+      
 footer role="contentinfo" class="footer"
   div class="container"
     p
-      | 「税金はどこへ行った？」は、イギリスの 
+      | 「税金はどこへ行った？」プロジェクトは、イギリスの 
       = link_to'Open Knowledge Foundation', 'http://okfn.org', :target => '_blank'
       |  が開発した 
       = link_to 'Where Does My Money Go? (英語版)', 'http://wheredoesmymoneygo.org/', :target => '_blank'
       |  をベースに開発されています。本プロジェクトは、公共データのオープン化を進める有志に支えられています。
-    
+    ul
+      li
+        = link_to 'Where Does My Money Go (UK)', 'http://wheredoesmymoneygo.org/', :target => '_blank'
+      li
+        = link_to 'OpenSpending', 'http://openspending.org/', :target => '_blank'
+      li
+        = link_to 'オープン・ナレッジ・ファウンデーション・ジャパン（OKFJ）', 'http://okfn.jp/', :target => '_blank'
+    p
+      | All 
+      = link_to 'code', 'http://www.gnu.org/licenses/agpl.html', :target => '_blank'
+      | , 
+      = link_to 'content', 'http://creativecommons.org/licenses/by/3.0/', :target => '_blank'
+      |  and 
+      = link_to 'data', 'http://opendatacommons.org/licenses/odbl/', :target => '_blank'
+      |  is openly licensed in accordance with the 
+      = link_to 'open definition', 'http://opendefinition.org/'
+      |. 
+      br
+      = link_to image_tag('http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png', :alt => 'Open Content'), 'http://opendefinition.org', :target => '_blank'
 nav role="navigation"

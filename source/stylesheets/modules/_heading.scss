@@ -8,6 +8,9 @@
 .subheading {
   margin-bottom: $margin-small-vertical;
   padding: $margin-small-vertical 0;
+  border: none;
+  background-color: #ebebeb;
+  background-color: rgba(0,0,0,0.05);
   &:before,
   &:after {
     content: '−';
@@ -19,4 +22,5 @@
   @extend .subheading;
   border: 3px solid #fff;
   font-weight: normal;
+  background-color: transparent;
 }
