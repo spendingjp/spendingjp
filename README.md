@@ -9,7 +9,8 @@
 * Bundler
 
 ```bash
-$ 
+$ git clone git@github.com:spendingjp/spendingjp.git
+$ cd spendingjp
 $ gem update --system
 $ bundle install --path vendor/bundle
 ```
@@ -29,6 +30,8 @@ Open [http://localhost:4567/](http://localhost:4567/) with your browser. The bro
 ```bash
 $ bundle exec middleman deploy
 ```
+
+The build task runs automatically before deploying.
 
 ### Only building
 
