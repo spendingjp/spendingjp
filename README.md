@@ -23,19 +23,18 @@ $ bundle exec middleman server
 
 Open [http://localhost:4567/](http://localhost:4567/) with your browser. The browser will be reloaded automatically whenever files change.
 
-## Building for a production
-
-```bash
-$ bundle exec middleman build
-```
-
-## Deploying to your own GitHub pages
+## Building and deploying to your own GitHub pages
 
 ```bash
 $ bundle exec middleman deploy
 ```
 
-If you use a remote name, see https://github.com/tvaughan/middleman-deploy#git-eg-github-pages for details.
+### Only building for a production
+
+```bash
+$ bundle exec middleman build
+```
+
 
 ## TODO
 

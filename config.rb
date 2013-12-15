@@ -45,6 +45,7 @@ set :port, 80
 
 activate :deploy do |deploy|
   deploy.method = :git
+  deploy.build_before = true
 end
 
 activate :google_analytics do |ga|
