@@ -9,6 +9,7 @@
 * Bundler
 
 ```bash
+$ 
 $ gem update --system
 $ bundle install --path vendor/bundle
 ```
@@ -29,7 +30,7 @@ Open [http://localhost:4567/](http://localhost:4567/) with your browser. The bro
 $ bundle exec middleman deploy
 ```
 
-### Only building for a production
+### Only building
 
 ```bash
 $ bundle exec middleman build
@@ -40,3 +41,5 @@ $ bundle exec middleman build
 
 * 更新情報を Spending.jp ヒストリーの Spreadsheet から自動更新する。
 * Spending.jp ヒストリーの Spreadsheet と Spending.jp Satellite Site List の Spreadsheet を統合する。
+* 「KNOW」のセクションに、サテライトサイトの選択プルダウンを追加する。
+* favicon を追加する。
