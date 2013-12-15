@@ -1,15 +1,33 @@
 ruby:
+  total = 59
   updates = [
-    { date: '2013/12/05', title: '神奈川県鎌倉市が立ち上がりました', url: 'http://kamakura.spending.jp/' },
-    { date: '2013/12/02', title: '神奈川県茅ヶ崎市が立ち上がりました', url: 'http://chigasaki.spending.jp/' },
-    { date: '2013/11/20', title: '東京都府中市が立ち上がりました', url: 'http://fuchu-tokyo.spending.jp/' },
+    { date: '2013/12/14', news: [
+      { title: '千葉県館山市が立ち上がりました', url: 'http://tateyama.spending.jp/' },
+      { title: '神奈川県逗子市が立ち上がりました', url: 'http://zushi.spending.jp/' },
+      { title: '東京都小平市が立ち上がりました', url: 'http://kodaira.spending.jp/' },
+      { title: '東京都品川区が立ち上がりました', url: 'http://shinagawa.spending.jp/' },
+    ]},
+    { date: '2013/12/05', news: [
+      { title: '神奈川県鎌倉市が立ち上がりました', url: 'http://kamakura.spending.jp/' },
+    ]},
+    { date: '2013/12/02', news: [
+      { title: '神奈川県茅ヶ崎市が立ち上がりました', url: 'http://chigasaki.spending.jp/' },
+    ]},
   ];
 
   in_press = [
-    { date: '2013/07/20', title: 'NHK NEWS WEBで、Spending Data Party をご紹介いただきました。', url: 'http://www3.nhk.or.jp/news/html/20130720/t10013177541000.html' },
-    { date: '2013/07/19', title: 'NHK NEWS WEB(TV総合）で、本プロジェクトをご紹介いただきました。', url: 'http://www3.nhk.or.jp/news/newsweb/' },
-    { date: '2013/11/20', title: 'ITから考える地方自治 〜 「税金はどこへ行った？」をオラの街にも作ろう - Nothing ventured, nothing gained.', url: 'http://takoratta.hatenablog.com/entry/2013/07/06/234618' },
+    { date: '2013/07/20', news: [
+      { title: 'NHK NEWS WEBで、Spending Data Party をご紹介いただきました。', url: 'http://www3.nhk.or.jp/news/html/20130720/t10013177541000.html' },
+    ]},
+    { date: '2013/07/19', news: [
+      { title: 'NHK NEWS WEB(TV総合）で、本プロジェクトをご紹介いただきました。', url: 'http://www3.nhk.or.jp/news/newsweb/' },
+    ]},
+    { date: '2013/11/20', news: [
+      { title: 'ITから考える地方自治 〜 「税金はどこへ行った？」をオラの街にも作ろう - Nothing ventured, nothing gained.', url: 'http://takoratta.hatenablog.com/entry/2013/07/06/234618' },
+    ]},
   ];
+  
+  whats_new_len = updates.size > in_press.size ? updates.size : in_press.size
 
 
 header role="banner" class="header"
@@ -34,16 +52,22 @@ header role="banner" class="header"
           th class="subheading"
             | メディア掲載情報
       tbody
-        - for i in 0...3
+        - for i in 0...whats_new_len
           tr
             td
-              span class="whats-new__date"
-                = updates[i][:date]
-              = link_to updates[i][:title], updates[i][:url]
+              - if updates[i].present?
+                span class="whats-new__date"
+                  = updates[i][:date]
+                - for news in updates[i][:news] do
+                  = link_to news[:title], news[:url]
+                  br
             td
-              span class="whats-new__date"
-                = in_press[i][:date]
-              = link_to in_press[i][:title], in_press[i][:url]
+              - if in_press[i].present?
+                span class="whats-new__date"
+                  = in_press[i][:date]
+                - for news in in_press[i][:news] do
+                  = link_to news[:title], news[:url]
+                  br
 
     div class="okfn-ribbon"
       = link_to 'An Open Knowledge Foundation Japan Site', 'http://okfn.jp', :target => '_blank'
@@ -96,7 +120,9 @@ div class="main" role="main"
       h2 class="heading"
         = image_tag 'know_tit.png', :alt => 'あなたの税金の使い道を知る'
       div class="section__lead"
-        | 現在、55自治体のサイトが立ち上がっています。
+        | 現在、
+        span class="js-city-num"
+        | 自治体のサイトが立ち上がっています。
       div id="map" class="map"
       
       p
@@ -105,6 +131,7 @@ div class="main" role="main"
         |  / 
         = link_to 'Excelファイル', 'https://docs.google.com/spreadsheet/pub?key=0ApLxfVa3-bUGdDk2YWdnakNOQ3RJWmtKbzAzaG05MEE&output=xls', :target => '_blank'
         | ）
+  
   // Join
   section class="section--turquoise" id="join"
     div class="container"
