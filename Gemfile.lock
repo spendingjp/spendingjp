@@ -54,6 +54,8 @@ GEM
       middleman-core (>= 3.0.0)
       net-sftp
       ptools
+    middleman-google-analytics (0.0.2)
+      middleman-core (>= 3.0.6)
     middleman-livereload (3.1.0)
       em-websocket (>= 0.2.0)
       middleman-core (>= 3.0.2)
@@ -107,6 +109,7 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 3.2.0)
   middleman-deploy
+  middleman-google-analytics
   middleman-livereload (~> 3.1.0)
   ruby18_source_location
   slim (~> 2.0.0)
