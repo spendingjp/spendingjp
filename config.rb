@@ -47,6 +47,10 @@ activate :deploy do |deploy|
   deploy.method = :git
 end
 
+activate :google_analytics do |ga|
+  ga.tracking_id = false
+end
+
 helpers do
 
   def host_with_port
