@@ -36,3 +36,8 @@ $ bundle exec middleman deploy
 ```
 
 If you use a remote name, see https://github.com/tvaughan/middleman-deploy#git-eg-github-pages for details.
+
+## TODO
+
+* 更新情報を Spending.jp ヒストリーの Spreadsheet から自動更新する。
+* Spending.jp ヒストリーの Spreadsheet と Spending.jp Satellite Site List の Spreadsheet を統合する。
