@@ -58,14 +58,14 @@ header role="banner" class="header"
                 span class="whats-new__date"
                   = updates[i][:date]
                 - for news in updates[i][:news] do
-                  = link_to news[:title], news[:url]
+                  = link_to news[:title], news[:url], :target => '_blank'
                   br
             td
               - if in_press[i].present?
                 span class="whats-new__date"
                   = in_press[i][:date]
                 - for news in in_press[i][:news] do
-                  = link_to news[:title], news[:url]
+                  = link_to news[:title], news[:url], :target => '_blank'
                   br
 
     div class="okfn-ribbon"
