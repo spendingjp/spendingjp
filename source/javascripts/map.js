@@ -24,11 +24,16 @@ $(window).load(function() {
         if (entry.gsx$location.$t != ''){
           var latlon = entry.gsx$location.$t.split(',');
           L.marker(latlon, {icon: mapIcon}).addTo(map).bindPopup('<a href="' + entry.gsx$sourceurl.$t + '" target="_blank">' + entry.gsx$source.$t + '</a>');
+          $('#js-site-selector').append($('<option />').val(entry.gsx$webpage.$t).html(entry.gsx$source.$t));
           num++;
         }
       }
     });
     $('.js-city-num').text(num);
+    $("#js-site-selector").chosen({
+      width: "300px",
+      placeholder_text_single: '自治体を選択してください'
+    });
     //map.fitBounds(markersToBounds(markers));
   }).fail(function( jqxhr, textStatus, error ){
     console.log('fail');
