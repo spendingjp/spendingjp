@@ -38,3 +38,16 @@ The build task runs automatically before deploying.
 ```bash
 $ bundle exec middleman build
 ```
+
+## 新しくサイトが立ち上がったら
+
+### 地図への反映
+
+[Spending.jp ヒストリー](https://docs.google.com/spreadsheet/ccc?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&usp=sharing) に行を追加します。`Tags` は `launch`、`Location` は [Geocoding](http://www.geocoding.jp/) などで緯度経度を調べて入力します。
+
+### CSVファイル、Excelファイルへの反映
+[Spending.jp Satellite Site List](https://docs.google.com/spreadsheet/ccc?key=0ApLxfVa3-bUGdDk2YWdnakNOQ3RJWmtKbzAzaG05MEE&usp=sharing) にURLを追記してください。
+
+### Webページの「更新情報」の修正
+
+`source/index.html.slim` の先頭の方に Ruby の配列とハッシュで定義してあるので、古いものは削除しつつ、新しいものを追加してください。
