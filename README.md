@@ -45,10 +45,7 @@ $ bundle exec middleman build
 
 ### 地図への反映
 
-[Spending.jp ヒストリー](https://docs.google.com/spreadsheet/ccc?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&usp=sharing) に行を追加します。`Tags` は `launch`、`Location` は [Geocoding](http://www.geocoding.jp/) などで緯度経度を調べて入力します。
-
-### CSVファイル、Excelファイルへの反映
-[Spending.jp Satellite Site List](https://docs.google.com/spreadsheet/ccc?key=0ApLxfVa3-bUGdDk2YWdnakNOQ3RJWmtKbzAzaG05MEE&usp=sharing) にURLを追記してください。
+[Spending.jp ヒストリー](https://docs.google.com/spreadsheet/ccc?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&usp=sharing) に行を追加します。`Tags` は `launch`、`Location` は [Geocoding](http://www.geocoding.jp/) などで緯度経度を調べて入力します。公開している CSVファイルと Excelファイルも、このスプレッドシートから出力されるようになっています。
 
 ### Webページの「更新情報」の修正
 
