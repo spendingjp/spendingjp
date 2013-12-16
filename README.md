@@ -38,11 +38,3 @@ The build task runs automatically before deploying.
 ```bash
 $ bundle exec middleman build
 ```
-
-
-## TODO
-
-* 更新情報を Spending.jp ヒストリーの Spreadsheet から自動更新する。
-* Spending.jp ヒストリーの Spreadsheet と Spending.jp Satellite Site List の Spreadsheet を統合する。
-* 「KNOW」のセクションに、サテライトサイトの選択プルダウンを追加する。
-* favicon を追加する。
