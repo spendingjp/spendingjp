@@ -67,6 +67,8 @@ header role="banner" class="header"
                 - for news in in_press[i][:news] do
                   = link_to news[:title], news[:url], :target => '_blank'
                   br
+    div class="whats-new__all_history"
+      = link_to 'プロジェクトのこれまでの経歴をすべて見る', 'http://timemapper.okfnlabs.org/view?url=https%3A%2F%2Fdocs.google.com%2Fa%2Fgeorepublic.de%2Fspreadsheet%2Fccc%3Fkey%3D0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc', :target => '_blank', :class => 'arrow-link'
 
     div class="okfn-ribbon"
       = link_to 'An Open Knowledge Foundation Japan Site', 'http://okfn.jp', :target => '_blank'

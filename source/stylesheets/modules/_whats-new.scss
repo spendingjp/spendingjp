@@ -2,7 +2,7 @@
 // --------------------------------------------------
 
 .whats-new {
-  margin-bottom: $margin-large-vertical;
+  margin-bottom: $margin-small-vertical;
   max-width: 100%;
   width: 100%;
   border: 1px solid $table-border-color;
@@ -15,7 +15,6 @@
       > th,
       > td {
         padding: $margin-small-horizontal;
-        // border-top: 1px solid $table-border-color;
         border-right: 1px solid $table-border-color;
         vertical-align: top;
       }
@@ -39,4 +38,9 @@
   display: block;
   margin-bottom: 2px;
   font-weight: bold;
+}
+
+.whats-new__all_history {
+  margin-bottom: $margin-large-vertical;
+  text-align: left
 }
