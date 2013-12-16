@@ -39,7 +39,9 @@ The build task runs automatically before deploying.
 $ bundle exec middleman build
 ```
 
-## 新しくサイトが立ち上がったら
+## 新しく立ち上がったサイトを反映するには
+
+まずは、`git pull origin master` でローカルリポジトリを最新化してください。デプロイが終わったら `git push origin master` で Push するのもお忘れなく。
 
 ### 地図への反映
 
