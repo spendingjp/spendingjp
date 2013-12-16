@@ -1,4 +1,5 @@
-//= require_tree .
+//= require "jquery-1.10.2.min"
+//= require "map"
 
 $(document).ready(function() {
     $('a[href^=#]').click(function(){
