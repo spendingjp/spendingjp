@@ -1,10 +1,10 @@
 # Spending.jp Project Website
 
-## Installation
+## インストール
 
-### Requirements
+### 必要なもの
 
-* Ruby +1.9.3
+* Ruby 1.9.3 以上
 * RubyGems
 * Bundler
 
@@ -15,33 +15,9 @@ $ gem update --system
 $ bundle install --path vendor/bundle
 ```
 
-## Getting Started
-
-### Running local server
-
-```bash
-$ bundle exec middleman server
-```
-
-Open [http://localhost:4567/](http://localhost:4567/) with your browser. The browser will be reloaded automatically whenever files change.
-
-## Building and deploying to your own GitHub pages
-
-```bash
-$ bundle exec middleman deploy
-```
-
-The build task runs automatically before deploying.
-
-### Only building
-
-```bash
-$ bundle exec middleman build
-```
-
 ## 新しく立ち上がったサイトを反映するには
 
-まずは、`git pull origin master` でローカルリポジトリを最新化してください。デプロイが終わったら `git push origin master` で Push するのもお忘れなく。
+まずは、`git pull origin master` でローカルリポジトリを最新化してください。
 
 ### 地図への反映
 
@@ -50,3 +26,36 @@ $ bundle exec middleman build
 ### Webページの「更新情報」の修正
 
 `source/index.html.slim` の先頭の方に Ruby の配列とハッシュで定義してあるので、古いものは削除しつつ、新しいものを追加してください。
+
+### ローカル環境で確認
+
+`bundle exec middleman server` を実行すると、ローカルのWebサーバーが起動します。
+
+```bash
+$ bundle exec middleman server
+== The Middleman is loading
+== LiveReload is waiting for a browser to connect
+== The Middleman is standing watch at http://0.0.0.0:4567
+== Inspect your site configuration at http://0.0.0.0:4567/__middleman/
+```
+
+ブラウザで [http://localhost:4567/](http://localhost:4567/) を開くとプレビューが見られるので、修正内容を確認して下さい。
+
+### commit & push
+
+問題がなければ、ローカルの master リポジトリに commit して、GitHub 側に push してください。
+
+```bash
+$ git commit -m '（コミットメッセージ）'
+$ git push origin master
+```
+
+### 本番環境に反映
+
+最後に次のコマンドを実行して、http://spending.jp に反映します。
+
+```bash
+$ bundle exec middleman deploy
+```
+
+実行すると、`build/` 以下に静的ファイルが生成され、さらに GitHub の gh-pages リポジトリに push されます。これで http://spending.jp が更新されます。
