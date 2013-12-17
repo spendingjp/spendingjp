@@ -27,9 +27,10 @@ html
     == stylesheet_link_tag "http://api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.css"
     //== javascript_include_tag "http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"
     == javascript_include_tag "http://api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.js"
-    
+
     = google_analytics_tag
 
   body
     == yield
     == javascript_include_tag  "all"
+    == javascript_include_tag "jquery.searchabledropdown-1.0.8.src.js"

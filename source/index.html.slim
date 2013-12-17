@@ -28,7 +28,7 @@ ruby:
       { title: 'ITから考える地方自治 〜 「税金はどこへ行った？」をオラの街にも作ろう - Nothing ventured, nothing gained.', url: 'http://takoratta.hatenablog.com/entry/2013/07/06/234618' },
     ]},
   ];
-  
+
   whats_new_len = updates.size > in_press.size ? updates.size : in_press.size
 
 
@@ -38,7 +38,7 @@ header role="banner" class="header"
       =image_tag 'title.png', :alt => '税金はどこへ行った？ - WHERE DOES MY MONEY GO? -'
 
     div class="header__produced_by"
-      | 「税金はどこへ行った？」は 
+      | 「税金はどこへ行った？」は
       = link_to 'Open Knowledge Foundation Japan', 'http://okfn.jp', :target => '_blank'
       |  のプロジェクトのひとつです
 
@@ -127,15 +127,18 @@ div class="main" role="main"
         | 現在、
         span class="js-city-num"
         | 自治体のサイトが立ち上がっています。
+      select id="search" name="locations"
+        option value=""
+          | 導入地域検索
       div id="map" class="map"
-      
+
       p
         | （サイトリストはデータでも公開しています。
         = link_to 'CSVファイル', 'https://docs.google.com/spreadsheet/pub?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&single=true&gid=1&output=csv', :target => '_blank'
-        |  / 
+        |  /
         = link_to 'Excelファイル', 'https://docs.google.com/spreadsheet/pub?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&output=xls', :target => '_blank'
         | ）
-  
+
   // Join
   section class="section--turquoise" id="join"
     div class="container"
@@ -183,12 +186,12 @@ div class="main" role="main"
       div class="section__lead"
         | サイトの立ち上げに必要な情報を公開しています
       p
-        | プロジェクトのソースコードは、 
+        | プロジェクトのソースコードは、
         = link_to 'Open Definition', 'http://opendefinition.org/', :target => '_blank'
         |  の定義に沿っていれば、どなたでも利用、改変、及び再配布が可能です。
         br
         | サイトの立ち上げにあたって独自のサーバを用意する必要はありません。（GitHub Pages を利用します。）
-      
+
       section
         h3 class="subheading"
           | サイト立ち上げのフロー
@@ -226,7 +229,7 @@ div class="main" role="main"
             div class="step__description"
               | おめでとうございます！公開されましたら、
               = link_to '開発者コミュニティのML', 'https://groups.google.com/forum/?fromgroups#!forum/spendingjp-dev', :target => '_blank'
-              |  か 
+              |  か
               = link_to 'Facebook のグループ', 'https://www.facebook.com/groups/spendingjp/', :target => '_blank'
               |  に是非ご連絡ください。本サイトにリンクを掲載させていただきます。
       section
@@ -250,7 +253,7 @@ div class="main" role="main"
           ul
             li
             = link_to 'SVG Icon Gallery for "Where Does My Money Go?"', 'http://jmblog.github.io/openspending-icons/', :target => '_blank', :class => 'arrow-link'
-      
+
       section
         h3 class="subheading"
           | サポート
@@ -264,7 +267,7 @@ div class="main" role="main"
         = image_tag 'contact_tit.png', :alt => 'お問い合わせ'
       div class="section__lead--turquoise"
         | ご質問、お問い合わせは以下にお願いいたします
-      
+
       div class="l-row"
         div class="l-col"
           h3 class="subheading--turquoise"
@@ -277,9 +280,9 @@ div class="main" role="main"
                 = link_to '開発者コミュニティのML', 'https://groups.google.com/forum/?fromgroups#!forum/spendingjp-dev', :target => '_blank', :class => 'arrow-link--turquoise'
               li
                 = link_to 'Facebook のグループ', 'https://www.facebook.com/groups/spendingjp/', :target => '_blank', :class => 'arrow-link--turquoise'
-            
 
-      
+
+
         div class="l-col"
           h3 class="subheading--turquoise"
             | プロジェクト運営チームへのお問い合わせ
@@ -289,7 +292,7 @@ div class="main" role="main"
             ul
               li
                 = link_to 'お問い合わせフォーム', 'https://docs.google.com/spreadsheet/viewform?usp=drive_web&formkey=dGw3ZTNvYjRkRnFWb3JDUDJuNExpWFE6MQ#gid=0', :target => '_blank', :class => 'arrow-link--turquoise'
-    
+
       div class="l-row"
         div class="l-col"
           h3 class="subheading--turquoise"
@@ -301,11 +304,11 @@ div class="main" role="main"
                 |「イギリスの Open Knowledge Foundation が開発したオープンソースプログラムをもとに開発されている。」
               | という旨を必ず記載していただきますようお願い致します。
 
-      
+
 footer role="contentinfo" class="footer"
   div class="container"
     p
-      | 「税金はどこへ行った？」プロジェクトは、イギリスの 
+      | 「税金はどこへ行った？」プロジェクトは、イギリスの
 
       = link_to'Open Knowledge Foundation', 'http://okfn.org', :target => '_blank'
       |  が開発した
@@ -319,15 +322,15 @@ footer role="contentinfo" class="footer"
       li
         = link_to 'オープン・ナレッジ・ファウンデーション・ジャパン（OKFJ）', 'http://okfn.jp/', :target => '_blank'
     p
-      | All 
+      | All
       = link_to 'code', 'http://www.gnu.org/licenses/agpl.html', :target => '_blank'
-      | , 
+      | ,
       = link_to 'content', 'http://creativecommons.org/licenses/by/3.0/', :target => '_blank'
-      |  and 
+      |  and
       = link_to 'data', 'http://opendatacommons.org/licenses/odbl/', :target => '_blank'
-      |  is openly licensed in accordance with the 
+      |  is openly licensed in accordance with the
       = link_to 'open definition', 'http://opendefinition.org/'
-      |. 
+      |.
       br
       = link_to image_tag('http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png', :alt => 'Open Content'), 'http://opendefinition.org', :target => '_blank'
 nav role="navigation"
