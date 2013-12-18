@@ -43,7 +43,6 @@ $(document).ready(function() {
           var latlon = entry.gsx$location.$t.split(',');
           L.marker(latlon, {icon: mapIcon}).addTo(map).bindPopup('<a href="' + entry.gsx$sourceurl.$t + '" target="_blank">' + entry.gsx$source.$t + '</a>');
           selector_options.push({name: entry.gsx$source.$t, cd: entry.gsx$organizationcode.$t - 0, url: entry.gsx$webpage.$t});
-//          $('#js-site-selector').append($('<option />').val(entry.gsx$webpage.$t).html(entry.gsx$source.$t));
           site_num++;
         }
       }
@@ -56,20 +55,21 @@ $(document).ready(function() {
     _.sortBy(selector_options, 'cd').forEach(function(opt) {
       $('#js-site-selector').append($('<option />').val(opt.url).html(opt.name));
     });
-//    $("#js-site-selector").chosen({
-//      width: "300px",
-//      placeholder_text_single: '自治体を選択してください',
-//      search_contains: true
-//    });
     $('#js-site-selector').select2({
       width: "300px",
       placeholder: "自治体を選択してください"
     });
-    //map.fitBounds(markersToBounds(markers));
   }).fail(function( jqxhr, textStatus, error ){
     console.log('fail');
     console.log(textStatus);
     console.log(error);
   });
-
+  
+  $('#js-site-selector-button').on('click', function(e) {
+    e.preventDefault();
+    var url = $('#js-site-selector option:selected').val();
+    if (url) {
+      window.open(url);
+    }
+  });
 });

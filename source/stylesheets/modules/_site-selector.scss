@@ -1,8 +1,26 @@
 // Site Selector
-
+// --------------------------------------------------
 
 .site-selector {
   background-color: #e1ebed;
   margin-bottom: $margin-large-vertical;
   padding: $margin-small-vertical;
+}
+
+.site-selector__button {
+  background-color: $dark-blue;
+  height: 47px;
+  line-height: 47px;
+  color: #fff;
+  display: inline-block;
+  @include border-radius(6px);
+  margin-left: $margin-large-horizontal;
+  padding: 0 1em;
+  
+  &:hover,
+  &:active {
+    color: #fff;
+    text-decoration: none;
+    @include opacity(0.7);
+  }
 }
