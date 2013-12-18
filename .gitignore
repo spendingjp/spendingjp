@@ -3,4 +3,4 @@
 /.sass-cache
 .DS_Store
 /vendor
-Gemfile.lock
+/Gemfile.lock

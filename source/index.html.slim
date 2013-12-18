@@ -124,11 +124,15 @@ div class="main" role="main"
         | 現在、
         span class="js-city-num"
         | 自治体のサイトが立ち上がっています。
-      select id="search" name="locations"
-        option value=""
-          | 導入地域検索
-      div id="map" class="map"
+      
+    div class="site-selector"
+      select id="js-site-selector" data-placeholder="自治体を選択してください"
+        option
+      = link_to 'サイトを見る', '', :class => 'site-selector__button', :id => 'js-site-selector-button'
+      
+    div id="map" class="map"
 
+    div class="container"
       p
         | （サイトリストはデータでも公開しています。
         = link_to 'CSVファイル', 'https://docs.google.com/spreadsheet/pub?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&single=true&gid=1&output=csv', :target => '_blank'
