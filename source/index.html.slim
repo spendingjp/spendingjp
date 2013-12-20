@@ -37,7 +37,7 @@ header role="banner" class="header"
 
     div class="header__produced_by"
       | 「税金はどこへ行った？」は
-      = link_to 'Open Knowledge Foundation Japan', 'http://okfn.jp', :target => '_blank'
+      = ' ' + link_to('Open Knowledge Foundation Japan', 'http://okfn.jp', :target => '_blank')
       |  のプロジェクトのひとつです
 
     nav class="nav-buttons"
@@ -99,7 +99,7 @@ div class="main" role="main"
           | 税金が支える公共サービスの受益と負担の関係をわかりやすく理解して頂く為に
           br
           | イギリスの
-          = link_to 'Where Does My Money Go?', 'http://wheredoesmymoneygo.org', :target => '_blank'
+          = ' ' + link_to('Where Does My Money Go?', 'http://wheredoesmymoneygo.org', :target => '_blank')
           |  を参考に、有志によって立ち上げられ、
           br
           | 現在は、多くの有志の人の手によりサイトが立ち上がっています。
@@ -138,7 +138,7 @@ div class="main" role="main"
         | （サイトリストはデータでも公開しています。
         = link_to 'CSVファイル', 'https://docs.google.com/spreadsheet/pub?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&single=true&gid=1&output=csv', :target => '_blank'
         |  /
-        = link_to 'Excelファイル', 'https://docs.google.com/spreadsheet/pub?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&output=xls', :target => '_blank'
+        = ' ' + link_to('Excelファイル', 'https://docs.google.com/spreadsheet/pub?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&output=xls', :target => '_blank')
         | ）
 
   // Join
@@ -312,9 +312,9 @@ footer role="contentinfo" class="footer"
     p
       | 「税金はどこへ行った？」プロジェクトは、イギリスの
 
-      = link_to'Open Knowledge Foundation', 'http://okfn.org', :target => '_blank'
+      = ' ' + link_to('Open Knowledge Foundation', 'http://okfn.org', :target => '_blank')
       |  が開発した
-      = link_to 'Where Does My Money Go? (英語版)', 'http://wheredoesmymoneygo.org/', :target => '_blank'
+      = ' ' + link_to('Where Does My Money Go? (英語版)', 'http://wheredoesmymoneygo.org/', :target => '_blank')
       |  をベースに開発されています。本プロジェクトは、公共データのオープン化を進める有志に支えられています。
     ul
       li
@@ -325,13 +325,13 @@ footer role="contentinfo" class="footer"
         = link_to 'オープン・ナレッジ・ファウンデーション・ジャパン（OKFJ）', 'http://okfn.jp/', :target => '_blank'
     p
       | All
-      = link_to 'code', 'http://www.gnu.org/licenses/agpl.html', :target => '_blank'
+      = ' ' + link_to('code', 'http://www.gnu.org/licenses/agpl.html', :target => '_blank')
       | ,
-      = link_to 'content', 'http://creativecommons.org/licenses/by/3.0/', :target => '_blank'
+      = ' ' + link_to('content', 'http://creativecommons.org/licenses/by/3.0/', :target => '_blank')
       |  and
-      = link_to 'data', 'http://opendatacommons.org/licenses/odbl/', :target => '_blank'
+      = ' ' + link_to('data', 'http://opendatacommons.org/licenses/odbl/', :target => '_blank')
       |  is openly licensed in accordance with the
-      = link_to 'open definition', 'http://opendefinition.org/'
+      = ' ' + link_to('open definition', 'http://opendefinition.org/')
       |.
       br
       = link_to image_tag('http://assets.okfn.org/images/ok_buttons/od_80x15_blue.png', :alt => 'Open Content'), 'http://opendefinition.org', :target => '_blank'
