@@ -21,7 +21,7 @@ $ bundle install --path vendor/bundle
 
 ### 地図への反映
 
-[Spending.jp ヒストリー](https://docs.google.com/spreadsheet/ccc?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&usp=sharing) に行を追加します。`Tags` は `launch`、`Location` は [Geocoding](http://www.geocoding.jp/) などで緯度経度を調べて入力します。公開している CSVファイルと Excelファイルも、このスプレッドシートから出力されるようになっています。
+[Spending.jp ヒストリー](https://docs.google.com/spreadsheet/ccc?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&usp=sharing) に行を追加します。`Tags` は "launch"、`Location` は [Geocoding](http://www.geocoding.jp/) などで緯度経度を調べて入力します。サイト内で公開している CSVファイルと Excelファイルも、このスプレッドシートから出力されるようになっています。
 
 ### Webページの「更新情報」の修正
 
@@ -43,7 +43,7 @@ $ bundle exec middleman server
 
 ### commit & push
 
-問題がなければ、ローカルの master リポジトリに commit して、GitHub 側に push してください。
+問題がなければ、ローカルの master ブランチに commit して、GitHub 側に push してください。
 
 ```bash
 $ git add (編集したファイル)
@@ -59,4 +59,4 @@ $ git push origin master
 $ bundle exec middleman deploy
 ```
 
-実行すると、`build/` 以下に静的ファイルが生成され、さらに GitHub の gh-pages リポジトリに push されます。これで http://spending.jp が更新されます。
+実行すると、`build/` 以下に静的ファイルが生成され、さらに GitHub の gh-pages ブランチに push されます。これで http://spending.jp が更新されます。
