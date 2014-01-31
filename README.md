@@ -46,6 +46,7 @@ $ bundle exec middleman server
 問題がなければ、ローカルの master リポジトリに commit して、GitHub 側に push してください。
 
 ```bash
+$ git add (編集したファイル)
 $ git commit -m '（コミットメッセージ）'
 $ git push origin master
 ```
