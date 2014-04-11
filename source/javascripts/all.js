@@ -32,7 +32,7 @@ $(document).ready(function() {
   });
   
   // Map
-  map = L.mapbox.map('map', 'georepublic.ghn7n3nf').setView([36.67740687825185, 136.71395820379257], 6);
+  map = L.mapbox.map('map', 'georepublic.ghn7n3nf', { scrollWheelZoom: false }).setView([36.67740687825185, 136.71395820379257], 6);
   
   var mapIcon = new MapIcon();
   $.getJSON('https://spreadsheets.google.com/feeds/list/0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc/1/public/values?alt=json').done(function(json){
