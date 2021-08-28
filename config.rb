@@ -36,38 +36,40 @@
 activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-activate :livereload
+# activate :livereload
 
 # Full image URL
-set :protocol, "http://"
-set :host, "spending.jp"
-set :port, 80
-
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.build_before = true
+configure :development do
+  set :protocol, "http://"
+  set :host, "spending.jp"
+  set :port, 80
 end
 
-activate :google_analytics do |ga|
-  ga.tracking_id = false
-end
+#activate :deploy do |deploy|
+#  deploy.method = :git
+#  deploy.build_before = true
+#end
+
+#activate :google_analytics do |ga|
+#  ga.tracking_id = false
+#end
 
 helpers do
 
   def host_with_port
-    [host, optional_port].compact.join(':')
+    [config[:host], config[:optional_port]].compact.join(':')
   end
 
   def optional_port
-    port unless port.to_i == 80
+    config[:port] unless config[:port].to_i == 80
   end
   
   def canonical_url(path = '')
-    protocol + host_with_port + path
+    config[:protocol] + host_with_port + path
   end
   
   def image_url(source)
-    protocol + host_with_port + image_path(source)
+    config[:protocol] + host_with_port + image_path(source)
   end
 
 end
@@ -87,6 +89,9 @@ set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
+  set :protocol, "http://"
+  set :host, "spending.jp"
+  set :port, 80
   # For example, change the Compass output style for deployment
   activate :minify_css
 
@@ -103,7 +108,7 @@ configure :build do
   # set :http_path, "/Content/images/"
 
   # Activate google-analytics extension
-  activate :google_analytics do |ga|
-    ga.tracking_id = 'UA-42072521-1'
-  end
+  # activate :google_analytics do |ga|
+  #  ga.tracking_id = 'UA-42072521-1'
+  # end
 end

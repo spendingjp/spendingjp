@@ -1,20 +1,12 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source 'http://rubygems.org'
+# frozen_string_literal: true
 
-gem "middleman", "~>3.2.0"
-gem "slim", "~> 2.0.0"
+source "https://rubygems.org"
 
-# Live-reloading plugin
-gem "middleman-livereload", "~> 3.1.0"
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-# For faster file watcher updates:
-# gem "wdm", "~> 0.1.0") # Windows
+# gem "rails"
 
-# Cross-templating language block fix for Ruby 1.8
-platforms :mri_18 do
-  gem "ruby18_source_location"
-end
+gem "middleman", "~> 4.4"
 
-gem "middleman-deploy"
-gem "middleman-google-analytics"
+gem "slim", "~> 4.1"
+
