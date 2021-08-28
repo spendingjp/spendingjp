@@ -10,3 +10,5 @@ gem "middleman", "~> 4.4"
 
 gem "slim", "~> 4.1"
 
+
+gem "middleman-livereload", "~> 3.4"

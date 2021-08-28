@@ -20,7 +20,7 @@ html
     meta content="IE=edge" http-equiv="X-UA-Compatible"
 
     / Use title if it's in the page YAML frontmatter
-    title == data.page.title || title
+    / title == data.title || title
 
     == stylesheet_link_tag "style"
     //== stylesheet_link_tag "http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css"
@@ -28,7 +28,7 @@ html
     //== javascript_include_tag "http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"
     == javascript_include_tag "http://api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.js"
 
-    = google_analytics_tag
+    // = google_analytics_tag
 
   body
     == yield
