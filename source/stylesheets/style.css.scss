@@ -1,13 +1,12 @@
 //= require "normalize"
 //= require "select2"
-
 // Variables
 // --------------------------------------------------
 @import "variables";
-
+@import "mixins";
 // Vendor libralies
 // --------------------------------------------------
-@import "compass";
+// @import "compass";
 
 // Mixins, Functions and Placeholders
 // --------------------------------------------------

@@ -1,23 +1,11 @@
 ruby:
   updates = [
-    { date: '2015/10/02', news: [
-      { title: '長野県千曲市が立ち上がりました。', url: 'http://chikuma.spending.jp/' },
-    ]},
-    { date: '2015/10/01', news: [
-      { title: '兵庫県加古川市が立ち上がりました。', url: 'http://kakogawajinzai.spending.jp' },
-    ]},
-    { date: '2015/06/13', news: [
-      { title: '神奈川県川崎市が立ち上がりました。', url: 'http://kawasaki.spending.jp/' },
-    ]},
+    { date: '2021/08/28', news: [
+      { title: '活動を再開し、つくば市版が立ち上がりました。', url: 'http://tsukubashi.spending.jp/' },
+    ]}
   ];
 
   in_press = [
-    { date: '2014/04/03', news: [
-      { title: '神戸新聞：「税金の使い道を一目で　尼崎市民らがサイト開設」', url: 'http://www.kobe-np.co.jp/news/hanshin/201404/0006831470.shtml' },
-    ]},
-    { date: '2013/11/20', news: [
-      { title: 'ITから考える地方自治 〜 「税金はどこへ行った？」をオラの街にも作ろう - Nothing ventured, nothing gained.', url: 'http://takoratta.hatenablog.com/entry/2013/07/06/234618' },
-    ]},
   ];
 
   whats_new_len = updates.size > in_press.size ? updates.size : in_press.size
@@ -27,11 +15,6 @@ header role="banner" class="header"
   div class="container"
     h1 class="header__title"
       =image_tag 'title.png', :alt => '税金はどこへ行った？ - WHERE DOES MY MONEY GO? -'
-
-    div class="header__produced_by"
-      | 「税金はどこへ行った？」は
-      = ' ' + link_to('Open Knowledge Foundation Japan', 'http://okfn.jp', :target => '_blank')
-      |  のプロジェクトのひとつです
 
     nav class="nav-buttons"
       = link_to image_tag('hero_btn_know.png', :alt => 'あなたの税金の使い道を知る', :class => 'nav-button'), './#know'
@@ -61,11 +44,7 @@ header role="banner" class="header"
                 - for news in in_press[i][:news] do
                   = link_to news[:title], news[:url], :target => '_blank'
                   br
-    div class="whats-new__all_history"
-      = link_to 'プロジェクトのこれまでの経歴をすべて見る', 'http://timemapper.okfnlabs.org/view?url=https%3A%2F%2Fdocs.google.com%2Fa%2Fgeorepublic.de%2Fspreadsheet%2Fccc%3Fkey%3D0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&title=Spending.jp%20History', :target => '_blank', :class => 'arrow-link'
 
-    div class="okfn-ribbon"
-      = link_to 'An Open Knowledge Foundation Japan Site', 'http://okfn.jp', :target => '_blank'
 
 div class="main" role="main"
   // About
@@ -89,21 +68,18 @@ div class="main" role="main"
         p
           |「税金はどこへ行った？」は、
           br
-          | 税金が支える公共サービスの受益と負担の関係をわかりやすく理解して頂く為に
+          | 税金が支える公共サービスの受益と負担の関係をわかりやすく理解する為にデータを表現するプロジェクトで、
           br
-          | イギリスの
-          = ' ' + link_to('Where Does My Money Go?', 'http://wheredoesmymoneygo.org', :target => '_blank')
-          |  を参考に、有志によって立ち上げられ、
-          br
-          | 現在は、多くの有志の人の手によりサイトが立ち上がっています。
-        p
           | 税金への理解と問題意識が
           br
           | 日本の財政を健全化させ新たな成長へと導く近道に違いないと信じ、活動しています。
         p
-          | 現在は、自治体内での税金の使われ方がわかるのみですが、
+          | 2012年頃には多くの有志の人の手により様々な自治体のサイトが立ち上がりました。
           br
-          | いずれは自治体間での税金の比較、グローバルな税金の比較を目指しています。
+          | しかしながら、その後活動は衰退し、サーバが停止したことにより多くのサイトが見れなくなっています。
+        p
+          | 2021年8月、再度有志が本プロジェクトを復活させるために立ち上がり、活動を再開しています。
+
 
       nav class="nav-links"
         = link_to 'あなたの税金の使い道を知る', './#know'
@@ -117,18 +93,13 @@ div class="main" role="main"
       div class="section__lead"
         | 現在、
         span class="js-city-num"
-        | 自治体のサイトが立ち上がっています。
+        | つくば市のサイトが立ち上がっています。
+        br
+        = link_to image_tag('tsukuba.png', :alt => 'つくば市', :width => 400), 'https://tsukubashi.spending.jp/'
       
-    div class="site-selector"
-      select id="js-site-selector" data-placeholder="自治体を選択してください"
-        option
-      = link_to 'サイトを見る', '', :class => 'site-selector__button', :id => 'js-site-selector-button'
-      
-    div id="map" class="map"
-
     div class="container"
       p
-        | （サイトリストはデータでも公開しています。
+        | （過去のサイトリストをデータでも公開しています。
         = link_to 'CSVファイル', 'https://docs.google.com/spreadsheet/pub?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&single=true&gid=1&output=csv', :target => '_blank'
         |  /
         = ' ' + link_to('Excelファイル', 'https://docs.google.com/spreadsheet/pub?key=0AnJGwhMm-ribdEJ6V25HRTV2azVRNkpjTTJSQ3k3Nnc&output=xls', :target => '_blank')
